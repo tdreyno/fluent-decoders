@@ -2,7 +2,7 @@
 
 [![npm latest version](https://img.shields.io/npm/v/@tdreyno/fluent-decoders/latest.svg)](https://www.npmjs.com/package/@tdreyno/fluent-decoders)
 
-fluent-decoders is a Fluent API wrapper around `nvie/decoders`.
+fluent-decoders is a Fluent-style API wrapper around [nvie/decoders](https://github.com/nvie/decoders).
 
 ## Example
 
