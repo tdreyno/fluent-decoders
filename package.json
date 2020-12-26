@@ -1,6 +1,6 @@
 {
   "name": "@tdreyno/fluent-decoders",
-  "version": "1.23.3",
+  "version": "1.23.3-1",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "repository": "https://github.com/tdreyno/fluent-decoders.git",

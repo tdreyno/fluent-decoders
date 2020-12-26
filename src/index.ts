@@ -41,7 +41,8 @@ export const F = <T, Args extends unknown[]>(
 export const P = <T>(decoder: D.Decoder<T>) => F<T, []>(() => decoder)()
 
 // array
-export const array = F(D.array)
+export const array = <T>(decoder: Decoder<T>): Decoder<T[]> =>
+  new Decoder(D.array(decoder.decoder))
 export const poja = P(D.poja)
 
 // boolean
