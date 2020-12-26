@@ -1,8 +1,11 @@
 # fluent-decoders
 
 [![npm latest version](https://img.shields.io/npm/v/@tdreyno/fluent-decoders/latest.svg)](https://www.npmjs.com/package/@tdreyno/fluent-decoders)
+[![Minified Size](https://badgen.net/bundlephobia/minzip/@tdreyno/fluent-decoders)](https://bundlephobia.com/result?p=@tdreyno/fluent-decoders)
 
 fluent-decoders is a Fluent-style API wrapper around [nvie/decoders](https://github.com/nvie/decoders).
+
+**Note: Version is ALWAYS locked to same number as upstream `decoders` library**
 
 ## Example
 
