@@ -2323,10 +2323,10 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
-decoders@1.23.3:
-  version "1.23.3"
-  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.23.3.tgz#ac270f7f3c53bb85507bd1ed5d45522985da3a8d"
-  integrity sha512-3NnMWTaiE0KIUb0CkdohR0GzU9q7QsUcR8f+SpqU2UZwpo5irBof0eJC8Jii6hCM38Cwedqp0woPneeKRKFoqQ==
+decoders@1.23.4:
+  version "1.23.4"
+  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.23.4.tgz#39f164aa732550824aaf70f47f3d53707ae60b26"
+  integrity sha512-/+Et21yvbd2IKD1wmGQAQP1K6fV16J6dTG0lSmQOcDWNapxzHWq4bGE7rfmU+aELdgK/pmFiknAktlJejgVQxw==
   dependencies:
     debrief "^1.4.0"
     lemons "^1.4.0"
