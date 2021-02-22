@@ -5,8 +5,29 @@ import * as D from "decoders"
 import { AllowImplicit } from "decoders/helpers"
 
 type Options = {
-  style?: 'inline' | 'simple', // `inline` by default
-};
+  style?: "inline" | "simple" // `inline` by default
+}
+
+export class DecodeError extends Error {}
+
+export class Err<E, O> {
+  constructor(public error: E) {}
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  fold<T>(e: (e: E) => T, _s: (v: O) => T) {
+    return e(this.error)
+  }
+}
+
+export class Ok<E, O> {
+  constructor(public value: O) {}
+
+  fold<T>(_e: (e: E) => T, s: (v: O) => T) {
+    return s(this.value)
+  }
+}
+
+export type Result<E, O> = Err<E, O> | Ok<E, O>
 
 export class Decoder<T> {
   guard: D.Guard<T>
@@ -17,7 +38,25 @@ export class Decoder<T> {
 
   validate(blob: unknown, options?: Options): T {
     const guard = options ? D.guard(this.decoder, options) : this.guard
-    return guard(blob)
+
+    try {
+      return guard(blob)
+    } catch (e) {
+      // Upstream library does not use a custom error type.
+      if (e.name === "Decoding error") {
+        throw new DecodeError(e.message)
+      }
+
+      throw e
+    }
+  }
+
+  validateResult(blob: unknown, options?: Options): Result<DecodeError, T> {
+    try {
+      return new Ok(this.validate(blob, options))
+    } catch (e) {
+      return new Err(e)
+    }
   }
 
   map<V>(mapper: (value: T) => V): Decoder<V> {
