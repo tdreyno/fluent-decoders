@@ -26,10 +26,10 @@ const personDecoder = tuple3(string, string.refine(containsInt), boolean).map(
   toPerson,
 )
 
-const person = personDecoder.guard(["Name", "42", true])
+const person = personDecoder.validate(["Name", "42", true])
 
 // Compose
-const people = array(personDecoder).guard([
+const people = array(personDecoder).validate([
   ["A", "4", true],
   ["B", "2", false],
 ])

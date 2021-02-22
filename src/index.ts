@@ -4,11 +4,20 @@ import * as D from "decoders"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { AllowImplicit } from "decoders/helpers"
 
+type Options = {
+  style?: 'inline' | 'simple', // `inline` by default
+};
+
 export class Decoder<T> {
   guard: D.Guard<T>
 
   constructor(public decoder: D.Decoder<T>) {
     this.guard = D.guard(this.decoder)
+  }
+
+  validate(blob: unknown, options?: Options): T {
+    const guard = options ? D.guard(this.decoder, options) : this.guard
+    return guard(blob)
   }
 
   map<V>(mapper: (value: T) => V): Decoder<V> {
@@ -167,6 +176,7 @@ export const nullable = <T1>(d1: Decoder<T1>) =>
 
 // string
 export const string = P(D.string)
+export const nonEmptyString = P(D.nonEmptyString)
 export const email = P(D.email)
 export const url = F(D.url)
 export const regex = F(D.regex)
