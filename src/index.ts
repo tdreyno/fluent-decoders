@@ -4,6 +4,8 @@ import * as D from "decoders"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { AllowImplicit } from "decoders/helpers"
 
+export const identity = <X>(x: X): X => x
+
 type Options = {
   style?: "inline" | "simple" // `inline` by default
 }
@@ -64,7 +66,8 @@ export class Decoder<T> {
   }
 
   refine<V extends T>(
-    typeGuard: (data: T) => data is V,
+    typeGuard: (data: T) => data is V = (data: T): data is V =>
+      data ? true : true,
     reason = "Does not pass predicate",
   ): Decoder<V> {
     return new Decoder(D.compose(this.decoder, D.predicate(typeGuard, reason)))
