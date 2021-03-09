@@ -91,6 +91,8 @@ export const P = <T>(decoder: D.Decoder<T>) => F<T, []>(() => decoder)()
 // array
 export const array = <T>(decoder: Decoder<T>): Decoder<T[]> =>
   new Decoder(D.array(decoder.decoder))
+export const nonEmptyArray = <T>(decoder: Decoder<T>): Decoder<T[]> =>
+  new Decoder(((D as any).nonEmptyArray as typeof D.array)(decoder.decoder))
 export const poja = P(D.poja)
 
 // boolean
