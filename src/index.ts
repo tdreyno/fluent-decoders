@@ -222,6 +222,13 @@ export const email = P(D.email)
 export const url = F(D.url)
 export const regex = F(D.regex)
 
+export const iso8601String = string.refine((data: string): data is string =>
+  iso8601.validateResult(data).fold(
+    () => false,
+    () => true,
+  ),
+)
+
 // tuple
 export const tuple2 = <T1, T2>(d1: Decoder<T1>, d2: Decoder<T2>) =>
   new Decoder(D.tuple2(d1.decoder, d2.decoder))
