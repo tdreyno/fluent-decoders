@@ -1,6 +1,6 @@
 {
   "name": "@tdreyno/fluent-decoders",
-  "version": "1.23.4-5",
+  "version": "1.23.4-6",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "repository": "https://github.com/tdreyno/fluent-decoders.git",
@@ -12,7 +12,8 @@
     "build": "pika build && yarn compress",
     "compress": "terser pkg/dist-web/index.js -o pkg/dist-web/index.min.js --source-map --mangle --compress passes=2 --toplevel --mangle-props regex=/_$/ && gzip-size pkg/dist-web/index.min.js",
     "test": "jest --runInBand",
-    "version": "yarn run build"
+    "version": "yarn run build",
+    "prepare": "husky install"
   },
   "@pika/pack": {
     "pipeline": [
@@ -40,11 +41,6 @@
     "*.{css,md}": [
       "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "volta": {
     "node": "14.11.0",

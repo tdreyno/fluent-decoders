@@ -6,7 +6,7 @@ import { AllowImplicit } from "decoders/helpers"
 
 export const identity = <X>(x: X): X => x
 
-type Options = {
+export type Options = {
   style?: "inline" | "simple" // `inline` by default
 }
 
