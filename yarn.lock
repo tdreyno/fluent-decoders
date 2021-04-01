@@ -2345,10 +2345,10 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
-decoders@1.23.4:
-  version "1.23.4"
-  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.23.4.tgz#39f164aa732550824aaf70f47f3d53707ae60b26"
-  integrity sha512-/+Et21yvbd2IKD1wmGQAQP1K6fV16J6dTG0lSmQOcDWNapxzHWq4bGE7rfmU+aELdgK/pmFiknAktlJejgVQxw==
+decoders@1.23.5:
+  version "1.23.5"
+  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.23.5.tgz#fb66e3bbf62bca57185a666f5787545281715618"
+  integrity sha512-ytEOF7prFr9WXeHHRh6d/Jp2bw+BpA1yibtqbuxPIyUpvaPs+bKgCaa918FiZf987IuXjLHPQa9hOQ7LoD0JDA==
   dependencies:
     debrief "^1.4.0"
     lemons "^1.4.0"
