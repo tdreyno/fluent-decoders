@@ -72,6 +72,10 @@ export class Decoder<T> {
   ): Decoder<V> {
     return new Decoder(D.compose(this.decoder, D.predicate(typeGuard, reason)))
   }
+
+  describe(msg: string): Decoder<T> {
+    return new Decoder(D.describe(this.decoder, msg))
+  }
 }
 
 export type $DecoderType<T> = T extends Decoder<infer V> ? V : never
