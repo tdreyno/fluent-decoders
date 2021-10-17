@@ -45,7 +45,7 @@ export class Decoder<T> {
       return guard(blob)
     } catch (e) {
       // Upstream library does not use a custom error type.
-      if (e.name === "Decoding error") {
+      if (e instanceof Error && e.name === "Decoding error") {
         throw new DecodeError(e.message)
       }
 
@@ -57,7 +57,7 @@ export class Decoder<T> {
     try {
       return new Ok(this.validate(blob, options))
     } catch (e) {
-      return new Err(e)
+      return new Err(e as Error)
     }
   }
 
@@ -80,18 +80,19 @@ export class Decoder<T> {
 
 export type $DecoderType<T> = T extends Decoder<infer V> ? V : never
 
-export type ObjectDecoderType<T> = AllowImplicit<
-  { [key in keyof T]: $DecoderType<T[key]> }
->
+export type ObjectDecoderType<T> = AllowImplicit<{
+  [key in keyof T]: $DecoderType<T[key]>
+}>
 
 export type $DDecoderType<T> = T extends D.Decoder<infer V> ? V : never
-export type DObjectDecoderType<T> = AllowImplicit<
-  { [key in keyof T]: $DDecoderType<T[key]> }
->
+export type DObjectDecoderType<T> = AllowImplicit<{
+  [key in keyof T]: $DDecoderType<T[key]>
+}>
 
-export const F = <T, Args extends unknown[]>(
-  fn: (...args: Args) => D.Decoder<T>,
-) => (...args: Args) => new Decoder(fn(...args))
+export const F =
+  <T, Args extends unknown[]>(fn: (...args: Args) => D.Decoder<T>) =>
+  (...args: Args) =>
+    new Decoder(fn(...args))
 
 export const P = <T>(decoder: D.Decoder<T>) => F<T, []>(() => decoder)()
 
@@ -99,7 +100,7 @@ export const P = <T>(decoder: D.Decoder<T>) => F<T, []>(() => decoder)()
 export const array = <T>(decoder: Decoder<T>): Decoder<T[]> =>
   new Decoder(D.array(decoder.decoder))
 export const nonEmptyArray = <T>(decoder: Decoder<T>): Decoder<T[]> =>
-  new Decoder(((D as any).nonEmptyArray as typeof D.array)(decoder.decoder))
+  new Decoder(D.nonEmptyArray(decoder.decoder))
 export const poja = P(D.poja)
 
 // boolean
