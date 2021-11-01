@@ -2266,10 +2266,10 @@ decimal.js@^10.2.1:
   resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
   integrity sha512-V0pfhfr8suzyPGOx3nmq4aHqabehUZn6Ch9kyFpV79TGDTWFmHqUqXdabR7QHqxzrYolF4+tVmJhUG4OURg5dQ==
 
-decoders@1.25.4:
-  version "1.25.4"
-  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.25.4.tgz#b82deebb1566a34d136eca79486cb33fb8905da3"
-  integrity sha512-BzpPbgXkao38yzmFdZ4HkdxrZAEehMjNACYi5e4dPyXWuaON1LDOodIlUi9Ttjcf61XUKTM771O6rT9n9V00SA==
+decoders@1.25.5:
+  version "1.25.5"
+  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.25.5.tgz#bcd175d13ee8188e615412492dfc519aa7ce3b5a"
+  integrity sha512-+vhqDkexYr35SFOhoPvn6S5Vz1qFq1MqlyblTKtt2KtYdy+IyfLuaI/QIpFfjApvXsppp0m8vIskAqgqrYctRg==
   dependencies:
     debrief "^1.5.0"
     lemons "^1.4.0"

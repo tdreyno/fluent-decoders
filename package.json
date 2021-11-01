@@ -68,7 +68,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "decoders": "1.25.4"
+    "decoders": "1.25.5"
   },
   "peerDependencies": {}
 }
