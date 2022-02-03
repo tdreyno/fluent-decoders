@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Err, isOk, Ok, Result } from "@tdreyno/result"
 import * as D from "decoders"
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,25 +12,6 @@ export type Options = {
 }
 
 export class DecodeError extends Error {}
-
-export class Err<E, O> {
-  constructor(public error: E) {}
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  fold<T>(e: (e: E) => T, _s: (v: O) => T) {
-    return e(this.error)
-  }
-}
-
-export class Ok<E, O> {
-  constructor(public value: O) {}
-
-  fold<T>(_e: (e: E) => T, s: (v: O) => T) {
-    return s(this.value)
-  }
-}
-
-export type Result<E, O> = Err<E, O> | Ok<E, O>
 
 export class Decoder<T> {
   guard: D.Guard<T>
@@ -55,9 +37,9 @@ export class Decoder<T> {
 
   validateResult(blob: unknown, options?: Options): Result<DecodeError, T> {
     try {
-      return new Ok(this.validate(blob, options))
+      return Ok(this.validate(blob, options))
     } catch (e) {
-      return new Err(e as Error)
+      return Err(e as DecodeError)
     }
   }
 
@@ -231,10 +213,7 @@ export const url = F(D.url)
 export const regex = F(D.regex)
 
 export const iso8601String = string.refine((data: string): data is string =>
-  iso8601.validateResult(data).fold(
-    () => false,
-    () => true,
-  ),
+  isOk(iso8601.validateResult(data)),
 )
 
 // tuple
