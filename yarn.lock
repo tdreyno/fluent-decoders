@@ -1446,10 +1446,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tdreyno/result@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@tdreyno/result/-/result-1.3.0.tgz#07771ee4c615378a7683fb01dde0ebf2628030a4"
-  integrity sha512-cNqfklON0Fy5ToHq1Rs0KIpC9Ohd1JdKvPRTthnGJHzN4xJNtQbvqrHtDwCGeGJOxiR5m95U5ArN4v9MU+Zh6Q==
+"@tdreyno/result@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@tdreyno/result/-/result-1.4.0.tgz#1888a892626c228358d04340838ec0fe54e229ed"
+  integrity sha512-IsBGcsstrU+60XwxP5bImWVKncqDUMKIALW6jxY7CehIn7/9aIYNhmye0aK5cAIaRx+1MjTQPs673ydV4jSMIg==
 
 "@tootallnate/once@1":
   version "1.1.2"
