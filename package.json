@@ -1,6 +1,6 @@
 {
   "name": "@tdreyno/fluent-decoders",
-  "version": "1.25.5-1",
+  "version": "1.25.5-3",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "repository": "https://github.com/tdreyno/fluent-decoders.git",
@@ -43,7 +43,7 @@
     ]
   },
   "volta": {
-    "node": "14.11.0",
+    "node": "16.14.2",
     "yarn": "1.22.4"
   },
   "devDependencies": {
@@ -68,8 +68,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@tdreyno/result": "^1.6.1",
+    "@tdreyno/result": "^1.7.0",
     "decoders": "1.25.5"
-  },
-  "peerDependencies": {}
+  }
 }

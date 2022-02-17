@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Err, isOk, Ok, Result } from "@tdreyno/result"
 import * as D from "decoders"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Err, Ok, Result, isOk } from "@tdreyno/result"
+
 import { AllowImplicit } from "decoders/helpers"
 
 export const identity = <X>(x: X): X => x
@@ -41,6 +40,10 @@ export class Decoder<T> {
     } catch (e) {
       return Err(e as DecodeError)
     }
+  }
+
+  isValid(blob: unknown): blob is T {
+    return isOk(this.validateResult(blob))
   }
 
   map<V>(mapper: (value: T) => V): Decoder<V> {

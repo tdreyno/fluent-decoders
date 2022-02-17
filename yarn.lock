@@ -1457,10 +1457,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tdreyno/result@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@tdreyno/result/-/result-1.6.1.tgz#18050206719b0d6e0bbb0f891c1671c73c9b8280"
-  integrity sha512-sdKVguyK6IBPz547fcTWoWLYq2+Jtm+xqw/2fqsAmNFEelaDvZ8Ea7IluzjFINkedhkxRubCTXvCvwFRjWL4Nw==
+"@tdreyno/result@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@tdreyno/result/-/result-1.7.0.tgz#43b1bedb93d4e5767ecc3c55eb84ecc27a0c1d53"
+  integrity sha512-JwlXmsUHuhLHWKyUTkIHlbszVK4ufhlxaLPHfkgpB96YOb4HPtUcpS0+vWgwUlvQmDEgf0Gcy/Tj5g0urwnzTw==
 
 "@tootallnate/once@1":
   version "1.1.2"
