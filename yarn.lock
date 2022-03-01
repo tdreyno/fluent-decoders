@@ -2498,11 +2498,6 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-debrief@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/debrief/-/debrief-1.5.0.tgz#9ee31c4caba651ce87c3a286c455df24f9803f49"
-  integrity sha512-3QaFxhEGguXBmBWbnqYOcgdfC7BUu2VQfnT25fs4g9VBHxug+echFCBeVoRw4Nk85GyBkwlKmAS6VzTZEAVnAw==
-
 debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
@@ -2533,13 +2528,10 @@ decimal.js@^10.2.1:
   resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
   integrity sha512-V0pfhfr8suzyPGOx3nmq4aHqabehUZn6Ch9kyFpV79TGDTWFmHqUqXdabR7QHqxzrYolF4+tVmJhUG4OURg5dQ==
 
-decoders@1.25.5:
-  version "1.25.5"
-  resolved "https://registry.yarnpkg.com/decoders/-/decoders-1.25.5.tgz#bcd175d13ee8188e615412492dfc519aa7ce3b5a"
-  integrity sha512-+vhqDkexYr35SFOhoPvn6S5Vz1qFq1MqlyblTKtt2KtYdy+IyfLuaI/QIpFfjApvXsppp0m8vIskAqgqrYctRg==
-  dependencies:
-    debrief "^1.5.0"
-    lemons "^1.4.0"
+decoders@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/decoders/-/decoders-2.0.0.tgz#bdbf6cfe89634d18fd8188d12812867979e3df80"
+  integrity sha512-u6BlL3p8pj+pI3b/k+Q2n9KnoJGMFJ1VU7ThdpkvSdQ2z+jEj6SPB0Qx9rdsvCR0mNfJe/jUBeaeRmOhueP3HA==
 
 decompress-response@^3.3.0:
   version "3.3.0"
@@ -4363,11 +4355,6 @@ latest-version@^5.0.0:
   integrity sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==
   dependencies:
     package-json "^6.3.0"
-
-lemons@^1.4.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/lemons/-/lemons-1.6.0.tgz#49c187e08f9675a1ef3e0f077b4192805531d1bf"
-  integrity sha512-nMnKQjqWp2G3odsHtwZD//WStAYnqCA6bM3JXLTLsQ1Mwkj2iLuaNQTJ6axt7wGqrZHMSt6tKDlHdjjJt9Cgxg==
 
 leven@^3.1.0:
   version "3.1.0"
