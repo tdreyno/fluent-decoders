@@ -68,7 +68,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@tdreyno/result": "^1.4.0",
+    "@tdreyno/result": "^1.6.1",
     "decoders": "1.25.5"
   },
   "peerDependencies": {}
