@@ -12,6 +12,16 @@ export type Options = {
 
 export class DecodeError extends Error {}
 
+let _allowMapping = true
+
+export const disallowMapping = () => {
+  _allowMapping = false
+}
+
+export const allowMapping = () => {
+  _allowMapping = true
+}
+
 export class Decoder<T> {
   guard: D.Guard<T>
 
@@ -47,6 +57,10 @@ export class Decoder<T> {
   }
 
   map<V>(mapper: (value: T) => V): Decoder<V> {
+    if (!_allowMapping) {
+      throw new Error("Decoder mapping not allowed")
+    }
+
     return new Decoder(D.map(this.decoder, mapper))
   }
 
