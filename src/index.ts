@@ -106,6 +106,20 @@ export const nonEmptyArray = <T>(decoder: Decoder<T>): Decoder<T[]> =>
   new Decoder(D.nonEmptyArray(decoder.decoder))
 export const poja = P(D.poja)
 
+// Allow failures in an array to become nulls
+export const maybeArray = <T, R = T | null>(
+  decoder: Decoder<T>,
+  logError: (e: DecodeError) => void = () => void 0,
+): Decoder<R[]> =>
+  poja.map(items =>
+    items.map((item): R => {
+      return decoder.validateResult(item).unwrap(e => {
+        logError(e)
+        return null as unknown as T
+      }) as unknown as R
+    }),
+  )
+
 // boolean
 export const boolean = P(D.boolean)
 export const numericBoolean = P(D.numericBoolean)
