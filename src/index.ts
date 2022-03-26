@@ -50,6 +50,10 @@ export class Decoder<T> {
     return new Decoder(D.map(this.decoder, mapper))
   }
 
+  withDefault<V extends Exclude<T, null | undefined>>(def: V): Decoder<V> {
+    return this.map(v => (v === undefined || v === null ? def : (v as V)))
+  }
+
   refine<V extends T>(
     typeGuard: (data: T) => data is V = (data: T): data is V =>
       data ? true : true,
