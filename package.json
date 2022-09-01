@@ -70,6 +70,6 @@
   },
   "dependencies": {
     "@tdreyno/result": "^1.7.0",
-    "decoders": "1.25.5"
+    "decoders": "2.0.1"
   }
 }
