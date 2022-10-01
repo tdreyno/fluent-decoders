@@ -55,7 +55,7 @@
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
-    "eslint": "^8.21.0",
+    "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gzip-size-cli": "^5.1.0",
